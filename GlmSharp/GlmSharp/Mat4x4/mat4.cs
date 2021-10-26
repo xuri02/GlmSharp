@@ -1057,6 +1057,10 @@ namespace GlmSharp
         /// Executes a matrix-vector-multiplication.
         /// </summary>
         public static vec4 operator*(mat4 m, vec4 v) => new vec4(((m.m00 * v.x + m.m10 * v.y) + (m.m20 * v.z + m.m30 * v.w)), ((m.m01 * v.x + m.m11 * v.y) + (m.m21 * v.z + m.m31 * v.w)), ((m.m02 * v.x + m.m12 * v.y) + (m.m22 * v.z + m.m32 * v.w)), ((m.m03 * v.x + m.m13 * v.y) + (m.m23 * v.z + m.m33 * v.w)));
+        /// <summary>
+        /// Executes a matrix-vector-multiplication.
+        /// </summary>
+        public static vec4 operator*(mat4 m, vec3 v) => new vec4(((m.m00 * v.x + m.m10 * v.y) + (m.m20 * v.z + m.m30 * 1)), ((m.m01 * v.x + m.m11 * v.y) + (m.m21 * v.z + m.m31 * 1)), ((m.m02 * v.x + m.m12 * v.y) + (m.m22 * v.z + m.m32 * 1)), ((m.m03 * v.x + m.m13 * v.y) + (m.m23 * v.z + m.m33 * 1)));
         
         /// <summary>
         /// Executes a matrix-matrix-divison A / B == A * B^-1 (use with caution).
